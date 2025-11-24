@@ -1,16 +1,29 @@
-# React + Vite
+This will be the tracklist/checklist of Tasks to implement for the virtual tour:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1) Start Screen:
+    -Should have a welcome message;
+    -(Optional) Audio & Language buttons if we decide to have;
+    -Start Button;
 
-Currently, two official plugins are available:
+2) Info Hot Spots:
+    -We can have information panels with text & media being displayed when
+     the viewer clicks on some info points, e.g. explain what courses we do,
+     how often to have them, how many graduates there are or what technologies;
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+3) Scenes should be connected by physical distance:
+    Meaning that scene 1 -> 2 should be right next to each other;
 
-## React Compiler
+4) Have the "EXIT" signs be the hotspots to click to go to the next room;
+    -We can edit the text and instead of having "EXIT" it can be the next room's name,
+    e.g. "Main Corridor", "Teaching Room #1";
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+5) Juxtaposition photos:
+    -Some rooms can have an info panel that displays a before & after of the school;
 
-## Expanding the ESLint configuration
+6) "Fun Facts":
+    -We can implement some facts aboout the school that are floating texts that appear
+     as you navigate the school;
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+7) Small quizes in specific classrooms:
+    -Based on if the viewer is inside a classroom we can create a small easy quiz based on the
+    classroom's teaching material;

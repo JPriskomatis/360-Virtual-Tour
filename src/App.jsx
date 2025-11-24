@@ -2,8 +2,10 @@ import "aframe";
 import "./App.css";
 import Hotspot from "./Components/Hotspot";
 import SceneSelector from "./Components/SceneSelector";
-import hotspotsData from "./Hotspots";
+import hotspotsData from "./Data/Hotspots";
 import { useState } from "react";
+import SpotlightBox from "./Components/SpotlightBox";
+
 
 export default function App() {
   const [currentImage, setCurrentImage] = useState("/images/image.jpg");
@@ -22,7 +24,9 @@ export default function App() {
 
   return (
     <div className="app" style={{ width: "100vw", height: "100vh" }}>
+      <SpotlightBox/>
       <a-scene vr-mode-ui="enabled: true" cursor="rayOrigin: mouse">
+        
         <a-sky id="image-360" src={currentImage} rotation="0 -90 0"></a-sky>
 
         {/* Hotspots for current image */}
