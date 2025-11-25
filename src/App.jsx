@@ -4,7 +4,7 @@ import Hotspot from "./Components/Hotspot";
 import SceneSelector from "./Components/SceneSelector";
 import hotspotsData from "./Data/Hotspots";
 import { useState } from "react";
-import SpotlightBox from "./Components/SpotlightBox";
+import StartScreen from "./States/StartScreen";
 
 
 export default function App() {
@@ -24,7 +24,7 @@ export default function App() {
 
   return (
     <div className="app" style={{ width: "100vw", height: "100vh" }}>
-      <SpotlightBox/>
+      <StartScreen className={"z-10 w-full h-full bg-black flex items-center justify-center"}/>
       <a-scene vr-mode-ui="enabled: true" cursor="rayOrigin: mouse">
         
         <a-sky id="image-360" src={currentImage} rotation="0 -90 0"></a-sky>
