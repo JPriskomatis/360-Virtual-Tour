@@ -6,6 +6,7 @@ const hotspotsData = {
       color: "#b10000",
       text: "Vader",
       radius: 0.15,
+      
     },
   ],
 
@@ -17,6 +18,7 @@ const hotspotsData = {
       color: "#00ff00",
       text: "Back to forest",
       radius: 0.15,
+      infoText: "This has info text",
     },
     {
       position: "1 1 -3",

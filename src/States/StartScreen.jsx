@@ -16,7 +16,7 @@ export default function StartScreen({ className }) {
   return (
     <div className="z-10 w-full h-full flex items-center justify-center">
       <SpotlightBox hideStartScreen={handleHideStartScreen} />
-      <div className="absolute z-9 w-full h-full bg-black"></div>
+      <div className="absolute z-9 w-full h-full backdrop-blur-sm"></div>
     </div>
   );
 }

@@ -26,7 +26,7 @@ export default function SpotlightBox({ hideStartScreen }: { hideStartScreen: () 
   return (
     <div className="z-10">
       <div
-        className="group relative max-w-md rounded-xl border border-white/10 bg-gray-900 px-8 py-16 shadow-2xl"
+        className="group relative max-w-md rounded-xl border border-white/10 bg-gray-900 px-8 py-12 shadow-2xl"
         onMouseMove={handleMouseMove}
       >
         <motion.div
@@ -39,10 +39,10 @@ export default function SpotlightBox({ hideStartScreen }: { hideStartScreen: () 
         </h3>
 
         <p className="mt-6 text-base text-left leading-7 text-gray-300">
-          Welcome to our immersive 360° virtual tour...
+          Welcome to our 360° virtual tour, designed to provide a fully immersive and interactive experience of the space. Explore every detail at your own pace and gain a comprehensive understanding of the environment. Click Start to begin your guided journey.
         </p>
 
-        <div className="flex flex-row justify-evenly pt-4">
+        <div className="flex flex-row justify-evenly pt-8">
           <CoolButton btnTitle="Start" ClickedBtn={hideStartScreen} />
         </div>
       </div>
