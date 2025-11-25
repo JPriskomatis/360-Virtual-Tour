@@ -20,7 +20,10 @@ export default function App() {
   };
 
   const handleHotspotClick = (hotspot, image) => {
-    changeScene(image);
+    if(image && image.trim() !== ""){
+      changeScene(image);
+    }
+
   };
 
   return (
