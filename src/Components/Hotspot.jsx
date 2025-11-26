@@ -1,4 +1,6 @@
 import { useRef, useState, useEffect } from "react";
+import InfoPanelUI from "./UI/InfoPanelUI";
+
 
 export default function Hotspot({
   position,
@@ -7,6 +9,7 @@ export default function Hotspot({
   onClick,
   image,
   text = "",
+  infoTitle = "",
   infoText = "", // new prop for hover info
 }) {
   const hotspotRef = useRef(null);
@@ -55,29 +58,17 @@ export default function Hotspot({
           value={text}
           align="center"
           
-          color="#ffffff"
-          width="1.5"
+          color="white"
+          width="7"
         ></a-text>
       )}
 
       {/* Info panel on hover */}
       {infoText && showInfo && (
-        <a-entity position={`0 ${radius + 0.2} 0`}>
-          <a-plane
-            color="#000000"
-            opacity="0.7"
-            width="1.2"
-            height="0.5"
-            position="0 0 0"
-          ></a-plane>
-          <a-text
-            value={infoText}
-            color="#ffffff"
-            align="center"
-            width="1.1"
-            position="0 0 0.01"
-          ></a-text>
-        </a-entity>
+        <InfoPanelUI
+          title={infoTitle}
+          information={infoText}
+        />
       )}
     </a-entity>
   );

@@ -16,6 +16,7 @@ const hotspotsData = {
       color: "#b10000",
       text: "Vader",  //Text on the hotspot
       radius: 0.15,
+      infoTitle: "Room 102", //Title of the hotspot
       infoText: "Just an info panel, won't take us back to the other image",  //Text on the info panel when we hover the hotspot
     },
   ],
@@ -39,14 +40,18 @@ const hotspotsData = {
       color: "#00ff00",
       text: "Back to forest",
       radius: 0.15,
-      infoText: "Just an info panel, won't take us back to the other image",
+      infoTitle: "Καλώς ήλθατε στην ιστοσελίδα της Σ.Π.Η.Υ",
+      infoText: "Σας καλωσορίζουμε στην ιστοσελίδα της Σχολής Προγραμματιστών Ηλεκτρονικών Υπολογιστών (ΣΠΗΥ). \n Θεωρούμε την επαφή μας με το κοινό ιδιαίτερα σημαντική.\n \n Για το λόγο αυτό με την παρουσία μας στο διαδίκτυο παρέχουμε πληροφορίες για την αποστολή, την οργάνωση, την ιστορία, την εκπαίδευση και εν γένει τις δραστηριότητες της Σχολής."
     },
     {
       position: "1 1 -3",
       image: "/images/image.jpg", // Clicking this goes back
       color: "#00ff00",
-      text: "Back to forest",
+      text: "!",
       radius: 0.15,
+      infoTitle: "Δευτερο hotspot!",
+      infoText: "Αν το πατήσεις αυτό θα σε πάει στην προηγούμενη εικόνα!"
+
     },
   ],
 };

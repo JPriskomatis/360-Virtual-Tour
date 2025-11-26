@@ -31,6 +31,7 @@ export default function SceneSelector({ scenes, onSelect }) {
             borderRadius: "0px",
           }}
           onClick={() => onSelect(sceneKey)}
+          
         />
       ))}
     </div>
