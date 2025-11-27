@@ -4,24 +4,24 @@ import Hotspot from "./Components/Hotspot";
 import SceneSelector from "./Components/SceneSelector";
 import hotspotsData from "./Data/ScenesList";
 import { useState } from "react";
+import StartScreen from "./States/StartScreen";
 
 export default function App() {
   const [currentImage, setCurrentImage] = useState("/images/image.jpg");
   const [currentHotspots, setCurrentHotspots] = useState(
-    hotspotsData["/images/image.jpg"] || []
+    hotspotsData["/images/image.jpg"] || []           //This is the first image when we load the app;
   );
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const changeScene = (image) => {
-    // Start the blur transition
+    //Start the blur transition;
     setIsTransitioning(true);
 
-    // Wait for the transition duration, then change the image and hotspots
     setTimeout(() => {
       setCurrentImage(image);
       setCurrentHotspots(hotspotsData[image] || []);
-      setIsTransitioning(false); // fade out blur
-    }, 500); // matches CSS transition duration
+      setIsTransitioning(false); //fade out blur;
+    }, 500);
   };
 
   const handleHotspotClick = (hotspot, image) => {
@@ -34,7 +34,8 @@ export default function App() {
     <div className="app" style={{ width: "100vw", height: "100vh" }}>
       {/* Blur overlay */}
       <div className={`blur-overlay ${isTransitioning ? "active" : ""}`}></div>
-
+      
+      {/*<StartScreen/>*/}
       {/* 360 Scene */}
       <a-scene fog stats inspector keyboard-shortcuts vr-mode-ui="enabled: true" cursor="rayOrigin: mouse">
         <a-sky id="image-360" src={currentImage} rotation="0 -90 0"></a-sky>
@@ -46,7 +47,7 @@ export default function App() {
             position={h.position}
             image={h.image}
             color={h.color}
-            text={"!"}
+            text={h.text}
             radius={h.radius}
             onClick={handleHotspotClick}
             infoTitle={h.infoTitle}

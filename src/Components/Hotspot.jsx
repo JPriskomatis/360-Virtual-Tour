@@ -24,10 +24,13 @@ export default function Hotspot({
     };
 
     const handleMouseEnter = () => {
-      if (infoText) setShowInfo(true);
+      hotspot.setAttribute("material", "color: blue");
+      if (infoTitle) setShowInfo(true);
+      
     };
 
     const handleMouseLeave = () => {
+      hotspot.setAttribute("material", `color: ${color}`);
       setShowInfo(false);
     };
 
@@ -59,12 +62,12 @@ export default function Hotspot({
           align="center"
           
           color="white"
-          width="7"
+          width="4"
         ></a-text>
       )}
 
       {/* Info panel on hover */}
-      {infoText && showInfo && (
+      {showInfo && (
         <InfoPanelUI
           title={infoTitle}
           information={infoText}

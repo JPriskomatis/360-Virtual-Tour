@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-
+import { hover } from "motion";
+import React, { useEffect, useRef } from "react"; 
 export default function SceneSelector({ scenes, onSelect }) {
   
 
@@ -23,15 +23,9 @@ export default function SceneSelector({ scenes, onSelect }) {
           key={sceneKey}
           src={sceneKey} // Using the image as thumbnail
           alt="scene thumbnail"
-          style={{
-            width: "80px",
-            height: "45px",
-            cursor: "pointer",
-            border: "2px solid white",
-            borderRadius: "0px",
-          }}
           onClick={() => onSelect(sceneKey)}
-          
+          className="w-20 h-[45px] cursor-pointer border-2 border-white rounded-none 
+             transition-transform duration-200 hover:scale-105 hover:border-blue-400"
         />
       ))}
     </div>
