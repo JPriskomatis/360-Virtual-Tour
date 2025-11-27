@@ -36,7 +36,7 @@ export default function App() {
       <div className={`blur-overlay ${isTransitioning ? "active" : ""}`}></div>
 
       {/* 360 Scene */}
-      <a-scene vr-mode-ui="enabled: true" cursor="rayOrigin: mouse">
+      <a-scene fog stats inspector keyboard-shortcuts vr-mode-ui="enabled: true" cursor="rayOrigin: mouse">
         <a-sky id="image-360" src={currentImage} rotation="0 -90 0"></a-sky>
 
         {/* Hotspots */}
@@ -54,7 +54,7 @@ export default function App() {
           />
         ))}
 
-        <a-entity camera look-controls></a-entity>
+        <a-entity camera look-controls wasd-controls="acceleration:100"></a-entity>
       </a-scene>
 
       {/* Scene selector overlay */}

@@ -5,7 +5,7 @@ import InfoPanelUI from "./UI/InfoPanelUI";
 export default function Hotspot({
   position,
   radius = 0.1,
-  color = "#3c3f16",
+  color = "#475246",
   onClick,
   image,
   text = "",
