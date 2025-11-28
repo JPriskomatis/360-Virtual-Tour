@@ -5,22 +5,39 @@ import SceneSelector from "./Components/SceneSelector";
 import hotspotsData from "./Data/ScenesList";
 import { useState } from "react";
 import StartScreen from "./States/StartScreen";
+import TitlePanelUI from "./Components/UI/TitlePanelUI";
+
+const firstImage = "/images/image.jpg";
 
 export default function App() {
-  const [currentImage, setCurrentImage] = useState("/images/image.jpg");
+  const [currentImage, setCurrentImage] = useState(firstImage);
   const [currentHotspots, setCurrentHotspots] = useState(
-    hotspotsData["/images/image.jpg"] || []           //This is the first image when we load the app;
+    hotspotsData[firstImage] || [] // First image when app loads
   );
+
+  const [sceneTitle, setSceneTitle] = useState(
+    hotspotsData[firstImage]?.[0]?.sceneTitle || ""
+  );
+  const [sceneContent, setSceneContent] = useState(
+    hotspotsData[firstImage]?.[0]?.sceneContent || ""
+  );
+
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const changeScene = (image) => {
-    //Start the blur transition;
     setIsTransitioning(true);
 
     setTimeout(() => {
+      const newHotspots = hotspotsData[image] || [];
+
       setCurrentImage(image);
-      setCurrentHotspots(hotspotsData[image] || []);
-      setIsTransitioning(false); //fade out blur;
+      setCurrentHotspots(newHotspots);
+
+      // Update title and content for the new scene
+      setSceneTitle(newHotspots[0]?.sceneTitle || "");
+      setSceneContent(newHotspots[0]?.sceneContent || "");
+
+      setIsTransitioning(false);
     }, 500);
   };
 
@@ -34,10 +51,20 @@ export default function App() {
     <div className="app" style={{ width: "100vw", height: "100vh" }}>
       {/* Blur overlay */}
       <div className={`blur-overlay ${isTransitioning ? "active" : ""}`}></div>
-      
-      {/*<StartScreen/>*/}
+
+      {/* Title panel overlay */}
+      <div className="absolute top-10 left-10 z-50">
+        <TitlePanelUI title={sceneTitle} sceneContent={sceneContent} />
+      </div>
+
       {/* 360 Scene */}
-      <a-scene fog stats inspector keyboard-shortcuts vr-mode-ui="enabled: true" cursor="rayOrigin: mouse">
+      <a-scene
+        position="-1 1 0"
+        inspector
+        keyboard-shortcuts
+        vr-mode-ui="enabled: true"
+        cursor="rayOrigin: mouse"
+      >
         <a-sky id="image-360" src={currentImage} rotation="0 -90 0"></a-sky>
 
         {/* Hotspots */}
@@ -48,7 +75,7 @@ export default function App() {
             image={h.image}
             color={h.color}
             text={h.text}
-            radius={0.1}
+            radius={0.15}
             iconImage={h.iconImage}
             onClick={handleHotspotClick}
             infoTitle={h.infoTitle}

@@ -27,3 +27,6 @@ This will be the tracklist/checklist of Tasks to implement for the virtual tour:
 7) Small quizes in specific classrooms:
     -Based on if the viewer is inside a classroom we can create a small easy quiz based on the
     classroom's teaching material;
+
+8) UI glass-like panel at top left for title
+

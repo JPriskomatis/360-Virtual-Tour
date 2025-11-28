@@ -25,6 +25,8 @@ const hotspotsData = {
    */
   "/images/image.jpg": [
     {
+      sceneTitle: "Κεντρική Είσοδος Σχολής",
+      sceneContent: "Περιγραφή σχολής",
       position: "1 1 -3",
       image: "/images/vader.png",
       text: "!",
@@ -37,8 +39,9 @@ const hotspotsData = {
   
   "/images/vader.png": [
     {
+      sceneTitle: "Second Hello",
+      sceneContent: "Δεύτερη περιγραφή σχολής",
       position: "-1 1 -3",
-      
 
       iconImage: "./images/info.png",
       infoTitle: "Καλώς ήλθατε στην ιστοσελίδα της Σ.Π.Η.Υ",
@@ -46,7 +49,7 @@ const hotspotsData = {
     },
     {
       position: "1 1 -3",
-
+      image: "/images/image.jpg",
       iconImage: "./images/enter.png",
       infoTitle: "Δευτερο hotspot!",
       infoText: "Αν το πατήσεις αυτό θα σε πάει στην προηγούμενη εικόνα!"

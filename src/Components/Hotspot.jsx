@@ -1,11 +1,10 @@
 import { useRef, useState, useEffect } from "react";
 import InfoPanelUI from "./UI/InfoPanelUI";
 
-
 export default function Hotspot({
   position,
   radius = 0.1,
-  color = "#475246",
+  color = "#B0D180",
   onClick,
   image,
   text = "",
@@ -47,6 +46,7 @@ export default function Hotspot({
   }, [onClick, image, infoText]);
 
   return (
+    
     <a-entity position={position}>
       {/* Hotspot circle */}
       <a-entity
@@ -55,7 +55,7 @@ export default function Hotspot({
         geometry={`primitive: circle; radius: ${radius}`}
         material={`color: ${color};`}
       >
-        <a-image src={iconImage} width="0.2" height = "0.2" position= "0 0 0.0001"></a-image> {/* we can place icons inside this image now */}
+        <a-image wireframe src={iconImage} width="0.3" height = "0.3" position= "0 0 0.001"></a-image> {/* we can place icons inside this image now */}
 
       </a-entity>
 
