@@ -9,6 +9,7 @@ export default function Hotspot({
   onClick,
   image,
   text = "",
+  iconImage = "", 
   infoTitle = "",
   infoText = "", // new prop for hover info
 }) {
@@ -53,10 +54,13 @@ export default function Hotspot({
         class="clickable"
         geometry={`primitive: circle; radius: ${radius}`}
         material={`color: ${color};`}
-      ></a-entity>
+      >
+        <a-image src={iconImage} width="0.2" height = "0.2" position= "0 0 0.0001"></a-image> {/* we can place icons inside this image now */}
+
+      </a-entity>
 
       {/* Optional main text */}
-      {text && (
+      {/*{text && (
         <a-text
           value={text}
           align="center"
@@ -64,7 +68,7 @@ export default function Hotspot({
           color="white"
           width="4"
         ></a-text>
-      )}
+      )}*/}
 
       {/* Info panel on hover */}
       {showInfo && (

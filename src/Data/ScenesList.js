@@ -5,6 +5,8 @@
    If we don't want to display the info panel then we don't add the "infoText" parameter
 */
 
+import { image } from "motion/react-client";
+
 const hotspotsData = {
 
   //Example structure
@@ -26,7 +28,7 @@ const hotspotsData = {
       position: "1 1 -3",
       image: "/images/vader.png",
       text: "!",
-      radius: 0.15,
+      iconImage: "./images/enter.png",
       infoTitle: "Κύρια Είσοδος",
       //infoText: "Σας καλωσορίζουμε στην ιστοσελίδα της Σχολής Προγραμματιστών Ηλεκτρονικών Υπολογιστών (ΣΠΗΥ). \n Θεωρούμε την επαφή μας με το κοινό ιδιαίτερα σημαντική.\n \n Για το λόγο αυτό με την παρουσία μας στο διαδίκτυο παρέχουμε πληροφορίες για την αποστολή, την οργάνωση, την ιστορία, την εκπαίδευση και εν γένει τις δραστηριότητες της Σχολής."
     },
@@ -37,16 +39,15 @@ const hotspotsData = {
     {
       position: "-1 1 -3",
       
-      text: "!",
-      radius: 0.15,
+
+      iconImage: "./images/info.png",
       infoTitle: "Καλώς ήλθατε στην ιστοσελίδα της Σ.Π.Η.Υ",
       infoText: "Σας καλωσορίζουμε στην ιστοσελίδα της Σχολής Προγραμματιστών Ηλεκτρονικών Υπολογιστών (ΣΠΗΥ). \n Θεωρούμε την επαφή μας με το κοινό ιδιαίτερα σημαντική.\n \n Για το λόγο αυτό με την παρουσία μας στο διαδίκτυο παρέχουμε πληροφορίες για την αποστολή, την οργάνωση, την ιστορία, την εκπαίδευση και εν γένει τις δραστηριότητες της Σχολής."
     },
     {
       position: "1 1 -3",
-      image: "/images/image.jpg", // Clicking this goes back
-      text: ">",
-      radius: 0.15,
+
+      iconImage: "./images/enter.png",
       infoTitle: "Δευτερο hotspot!",
       infoText: "Αν το πατήσεις αυτό θα σε πάει στην προηγούμενη εικόνα!"
 

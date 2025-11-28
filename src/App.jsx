@@ -48,7 +48,8 @@ export default function App() {
             image={h.image}
             color={h.color}
             text={h.text}
-            radius={h.radius}
+            radius={0.1}
+            iconImage={h.iconImage}
             onClick={handleHotspotClick}
             infoTitle={h.infoTitle}
             infoText={h.infoText}
