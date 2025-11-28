@@ -53,8 +53,8 @@ export default function App() {
       <div className={`blur-overlay ${isTransitioning ? "active" : ""}`}></div>
 
       {/* Title panel overlay */}
-      <div className="absolute top-10 left-10 z-50">
-        <TitlePanelUI title={sceneTitle} sceneContent={sceneContent} />
+      <div className="absolute top-2 left-2 z-50">
+        <TitlePanelUI title={sceneTitle} sceneContent={sceneContent} isTransitioning={isTransitioning} />
       </div>
 
       {/* 360 Scene */}

@@ -1,8 +1,8 @@
 import { LiquidGlass } from '@liquidglass/react';
 
-export default function TitlePanelUI({title, sceneContent}){
+export default function TitlePanelUI({title, sceneContent, isTransitioning }){
     return(
-        <div className='inline-block pt-20 pl-20 items-start'>
+        <div className='inline-block pt-20 pl-20 max-w-lg' style={{ filter: isTransitioning ? "blur(8px)" : "none", transition: "filter 0.5s" }}>
             <LiquidGlass className='flex flex-col rounded-xl border-2 border-white border-solid pt-4 px-8 pb-4'
                     borderRadius={20}
                     blur={20}
@@ -10,8 +10,8 @@ export default function TitlePanelUI({title, sceneContent}){
                     brightness={1.1}
                     saturation={1.2}
                 >
-                    <h2 className='text-white text-4xl pb-8'>{title}</h2>
-                    <p className='text-white'>{sceneContent}</p>
+                    <h2 className='text-white font-bold text-4xl pb-8'>{title}</h2>
+                    <p className='text-gray-100	font-semibold w-full text-start'>{sceneContent}</p>
             </LiquidGlass>
         </div>
         
