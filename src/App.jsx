@@ -12,7 +12,7 @@ const firstImage = "/images/image.jpg";
 export default function App() {
   const [currentImage, setCurrentImage] = useState(firstImage);
   const [currentHotspots, setCurrentHotspots] = useState(
-    hotspotsData[firstImage] || [] // First image when app loads
+    hotspotsData[firstImage] || []
   );
 
   const [sceneTitle, setSceneTitle] = useState(
@@ -21,6 +21,9 @@ export default function App() {
   const [sceneContent, setSceneContent] = useState(
     hotspotsData[firstImage]?.[0]?.sceneContent || ""
   );
+
+  // Control StartScreen visibility
+  const [showStartScreen, setShowStartScreen] = useState(true);
 
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -33,7 +36,6 @@ export default function App() {
       setCurrentImage(image);
       setCurrentHotspots(newHotspots);
 
-      // Update title and content for the new scene
       setSceneTitle(newHotspots[0]?.sceneTitle || "");
       setSceneContent(newHotspots[0]?.sceneContent || "");
 
@@ -47,15 +49,42 @@ export default function App() {
     }
   };
 
+  // Function to show StartScreen again
+  const displayStartScreen = () => {
+    setShowStartScreen(true);
+    console.log("sdf");
+  };
+
   return (
     <div className="app" style={{ width: "100vw", height: "100vh" }}>
       {/* Blur overlay */}
       <div className={`blur-overlay ${isTransitioning ? "active" : ""}`}></div>
 
-      <StartScreen/>
+      {/* StartScreen */}
+      {showStartScreen && (
+        <StartScreen
+          
+          onClose={() => setShowStartScreen(false)}
+        />
+      )}
+
       {/* Title panel overlay */}
       <div className="absolute top-2 left-2 z-50">
-        <TitlePanelUI title={sceneTitle} sceneContent={sceneContent} isTransitioning={isTransitioning} />
+        <TitlePanelUI
+          title={sceneTitle}
+          sceneContent={sceneContent}
+          isTransitioning={isTransitioning}
+        />
+      </div>
+
+      {/* Info button to reopen StartScreen */}
+      <div className="absolute top-2 right-4 z-50">
+        <img
+          className="w-[50px] cursor-pointer"
+          onClick={displayStartScreen}
+          src="./images/info.png"
+          alt="info"
+        />
       </div>
 
       {/* 360 Scene */}
@@ -68,7 +97,6 @@ export default function App() {
       >
         <a-sky id="image-360" src={currentImage} rotation="0 -90 0"></a-sky>
 
-        {/* Hotspots */}
         {currentHotspots.map((h, index) => (
           <Hotspot
             key={index}
