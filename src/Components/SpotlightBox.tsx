@@ -3,6 +3,9 @@
 import React from "react";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { CoolButton } from "./CoolButton";
+import TutorialIcons from "./TutorialIcons";
+
+
 
 export default function SpotlightBox({ hideStartScreen }: { hideStartScreen: () => void }) {
   const mouseX = useMotionValue(0);
@@ -42,6 +45,29 @@ export default function SpotlightBox({ hideStartScreen }: { hideStartScreen: () 
           Welcome to our 360° virtual tour, designed to provide a fully immersive and interactive experience of the space. Explore every detail at your own pace and gain a comprehensive understanding of the environment. Click Start to begin your guided journey.
         </p>
 
+        {/*Tutorial icons we need:
+            1)  Left Mouse Drag = Movement
+            2)  Icons = What they represent
+            3)  Click = Change scenes
+        */}
+        <div className="text-white text-2xl pt-4">
+          Click to Explore this 360 world.
+        </div>
+        <div className="flex flex-row justify-center items-start gap-10 pt-4">
+          <TutorialIcons
+          imageSrc={"./images/icons/mouseDrag.png"}
+          iconDescription={"Hold left mouse button to View"}
+          />
+          <TutorialIcons
+            imageSrc={"./images/enter.png"}
+            iconDescription={"Click to Enter"}
+          />
+          <TutorialIcons
+            imageSrc={"./images/info.png"}
+            iconDescription={"Hover to Learn"}
+          />
+        </div>
+        
         <div className="flex flex-row justify-evenly pt-8">
           <CoolButton btnTitle="Start" ClickedBtn={hideStartScreen} />
         </div>

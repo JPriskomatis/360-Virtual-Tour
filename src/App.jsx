@@ -52,6 +52,7 @@ export default function App() {
       {/* Blur overlay */}
       <div className={`blur-overlay ${isTransitioning ? "active" : ""}`}></div>
 
+      <StartScreen/>
       {/* Title panel overlay */}
       <div className="absolute top-2 left-2 z-50">
         <TitlePanelUI title={sceneTitle} sceneContent={sceneContent} isTransitioning={isTransitioning} />
