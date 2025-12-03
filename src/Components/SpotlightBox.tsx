@@ -51,7 +51,7 @@ export default function SpotlightBox({ hideStartScreen }: { hideStartScreen: () 
             3)  Click = Change scenes
         */}
         <div className="text-white text-2xl pt-4">
-          Click to Explore this 360!
+          Click start to Explore this 360!
         </div>
         <div className="flex flex-row justify-center items-start gap-10 pt-4">
           <TutorialIcons

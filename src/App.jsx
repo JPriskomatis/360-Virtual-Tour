@@ -62,14 +62,16 @@ export default function App() {
 
       {/* StartScreen */}
       {showStartScreen && (
+        
         <StartScreen
-          
           onClose={() => setShowStartScreen(false)}
         />
       )}
 
       {/* Title panel overlay */}
-      <div className="absolute top-2 left-2 z-50">
+      <div
+        className="absolute top-2 left-2 z-50"
+      >
         <TitlePanelUI
           title={sceneTitle}
           sceneContent={sceneContent}
@@ -80,7 +82,7 @@ export default function App() {
       {/* Info button to reopen StartScreen */}
       <div className="absolute top-2 right-4 z-50">
         <img
-          className="w-[50px] cursor-pointer"
+          className="w-[50px] cursor-pointer hover:opacity-55"
           onClick={displayStartScreen}
           src="./images/info.png"
           alt="info"
