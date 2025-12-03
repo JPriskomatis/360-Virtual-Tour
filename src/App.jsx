@@ -70,7 +70,7 @@ export default function App() {
 
       {/* Title panel overlay */}
       <div
-        className="absolute top-2 left-2 z-50"
+        className="absolute top-2 left-2 z-5"
       >
         <TitlePanelUI
           title={sceneTitle}

@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export default function SceneSelector({ scenes, onSelect }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); //for mobile
+    };
+
+    handleResize(); // set initial value
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const sceneKeys = Object.keys(scenes);
+  const displayedScenes = isMobile ? sceneKeys.slice(0, 2) : sceneKeys;
 
   return (
     <div
@@ -18,24 +31,26 @@ export default function SceneSelector({ scenes, onSelect }) {
         borderRadius: "10px",
       }}
     >
-      {sceneKeys.map((sceneKey, index) => (
-        <div key={sceneKey} style={{ position: "relative", display: "flex", alignItems: "center" }}>
+      {displayedScenes.map((sceneKey, index) => (
+        <div
+          key={sceneKey}
+          style={{ position: "relative", display: "flex", alignItems: "center" }}
+        >
           <img
             src={sceneKey}
             alt="scene thumbnail"
             onClick={() => onSelect(sceneKey)}
-            className="w-20 h-[45px] cursor-pointer border-2 border-white rounded-none 
+            className="w-16 h-16 cursor-pointer border-2 border-white rounded-none 
                        transition-transform duration-200 hover:scale-105 hover:border-blue-400"
           />
-          
-          {/* Draw line to next item except last */}
-          {index < sceneKeys.length - 1 && (
+
+          {index < displayedScenes.length - 1 && (
             <div
               style={{
                 position: "absolute",
                 top: "50%",
-                right: "-50px", // adjust spacing
-                width: "50px", // length of line
+                right: "-50px",
+                width: "50px",
                 height: "2px",
                 backgroundColor: "white",
                 transform: "translateY(-50%)",

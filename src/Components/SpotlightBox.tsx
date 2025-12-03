@@ -27,9 +27,10 @@ export default function SpotlightBox({ hideStartScreen }: { hideStartScreen: () 
   `;
 
   return (
-    <div className="z-10">
+    <div className="z-10 flex justify-center">
       <div
-        className="group relative max-w-md rounded-xl border border-white/10 bg-gray-900 px-8 py-12 shadow-2xl"
+        className="group relative w-11/12 max-w-md rounded-xl border border-white/10 bg-gray-900 px-6 py-8 shadow-2xl sm:w-auto sm:px-8 sm:py-12"
+
         onMouseMove={handleMouseMove}
       >
         <motion.div
