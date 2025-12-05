@@ -1,20 +1,33 @@
 import React, { useState, useEffect } from "react";
 
-export default function SceneSelector({ scenes, onSelect }) {
+export default function SceneSelector({ scenes, currentScene, onSelect }) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); //for mobile
+      setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize(); // set initial value
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const sceneKeys = Object.keys(scenes);
-  const displayedScenes = isMobile ? sceneKeys.slice(0, 2) : sceneKeys;
+  const currentIndex = sceneKeys.indexOf(String(currentScene));
+
+  let displayedScenes;
+
+  if (isMobile) {
+    displayedScenes = sceneKeys.slice(0, 2);
+  } else {
+    const prev = sceneKeys[currentIndex - 1];
+    const curr = sceneKeys[currentIndex];
+    const next = sceneKeys[currentIndex + 1];
+    const twoNext = sceneKeys[currentIndex +2];
+
+    displayedScenes = [prev, curr, next, twoNext].filter(Boolean);
+  }
 
   return (
     <div
@@ -32,10 +45,7 @@ export default function SceneSelector({ scenes, onSelect }) {
       }}
     >
       {displayedScenes.map((sceneKey, index) => (
-        <div
-          key={sceneKey}
-          style={{ position: "relative", display: "flex", alignItems: "center" }}
-        >
+        <div key={sceneKey} style={{ position: "relative", display: "flex", alignItems: "center" }}>
           <img
             src={sceneKey}
             alt="scene thumbnail"

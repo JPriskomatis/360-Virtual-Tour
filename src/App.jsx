@@ -118,7 +118,7 @@ export default function App() {
       </a-scene>
 
       {/* Scene selector overlay */}
-      <SceneSelector scenes={hotspotsData} onSelect={changeScene} />
+      <SceneSelector scenes={hotspotsData} currentScene={currentImage} onSelect={changeScene} />
 
       {/* Styles for blur overlay */}
       <style>{`

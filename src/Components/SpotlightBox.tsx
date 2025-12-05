@@ -39,11 +39,12 @@ export default function SpotlightBox({ hideStartScreen }: { hideStartScreen: () 
         />
 
         <h3 className="text-2xl font-semibold leading-7 text-sky-500">
-          360 Virtual Tour
+          360° Εικονική Περιήγηση
         </h3>
 
-        <p className="mt-6 text-base text-left leading-7 text-gray-300">
-          Welcome to our 360° virtual tour, designed to provide a fully immersive and interactive experience of the space. Explore every detail at your own pace and gain a comprehensive understanding of the environment. Click Start to begin your guided journey.
+        <p className="mt-6 text-base text-left leading-7 text-gray-200">
+          Καλωσορίσατε στην 360° εικονική ξενάγηση! <br />
+          Η εμπειρία αυτή έχει σχεδιαστεί για να σας προσφέρει μια πλήρως βυθιστική και διαδραστική εξερεύνηση του χώρου. <br />Περιηγηθείτε με το δικό σας ρυθμό, ανακαλύψτε κάθε λεπτομέρεια και αποκτήστε μια ολοκληρωμένη εικόνα του περιβάλλοντος.
         </p>
 
         {/*Tutorial icons we need:
@@ -52,25 +53,25 @@ export default function SpotlightBox({ hideStartScreen }: { hideStartScreen: () 
             3)  Click = Change scenes
         */}
         <div className="text-white text-2xl pt-4">
-          Click start to Explore this 360!
+          Πατήστε Έναρξη για να ξεκινήσετε την εξερεύνηση!
         </div>
         <div className="flex flex-row justify-center items-start gap-10 pt-4">
           <TutorialIcons
           imageSrc={"./images/icons/mouseDrag.png"}
-          iconDescription={"Hold left mouse button to View"}
+          iconDescription={"Αριστερό κλίκ πατημένο για Προβολή"}
           />
           <TutorialIcons
             imageSrc={"./images/enter.png"}
-            iconDescription={"Click to Enter"}
+            iconDescription={"Κλίκ για Είσοδο"}
           />
           <TutorialIcons
             imageSrc={"./images/info.png"}
-            iconDescription={"Hover to Learn"}
+            iconDescription={"Σύρετε τον δείκτη για να Μάθετε"}
           />
         </div>
         
         <div className="flex flex-row justify-evenly pt-8">
-          <CoolButton btnTitle="Start" ClickedBtn={hideStartScreen} />
+          <CoolButton btnTitle="Έναρξη" ClickedBtn={hideStartScreen} />
         </div>
       </div>
     </div>
