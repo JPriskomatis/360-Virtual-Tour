@@ -7,7 +7,7 @@ import { useState } from "react";
 import StartScreen from "./States/StartScreen";
 import TitlePanelUI from "./Components/UI/TitlePanelUI";
 
-const firstImage = "/images/image.jpg";
+const firstImage = "/images/room0.jpg";
 
 export default function App() {
   const [currentImage, setCurrentImage] = useState(firstImage);
@@ -61,13 +61,13 @@ export default function App() {
       <div className={`blur-overlay ${isTransitioning ? "active" : ""}`}></div>
 
       {/* StartScreen */}
-      {showStartScreen && (
+      {/*{showStartScreen && (
         
         <StartScreen
           onClose={() => setShowStartScreen(false)}
         />
       )}
-
+*/}
       {/* Title panel overlay */}
       <div
         className="absolute top-2 left-2 z-5"
@@ -103,7 +103,7 @@ export default function App() {
           <Hotspot
             key={index}
             position={h.position}
-            image={h.image}
+            image={h.gotToImage}
             color={h.color}
             text={h.text}
             radius={0.15}

@@ -29,7 +29,9 @@ export default function InfoPanelUI({title, information} : InfoPanelUIProps){
         [background:padding-box_var(--bg-color),border-box_var(--border-color)]"
       >
         <p className="text-2xl text-white text-center">{title}</p>
-        <p className={`text-md text-white text-left ${information ? "py-4" : ""}`}> {information}</p>
+        <p className={`text-md text-white text-left ${information ? "py-4" : ""}`}
+        style={{ whiteSpace: "pre-line" }}
+        > {information}</p>
       </div>
     </div>
   );

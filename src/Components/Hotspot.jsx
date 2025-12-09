@@ -1,10 +1,11 @@
 import { useRef, useState, useEffect } from "react";
 import InfoPanelUI from "./UI/InfoPanelUI";
+import "aframe-look-at-component"; 
 
 export default function Hotspot({
   position,
   radius = 0.1,
-  color = "#B0D180",
+  color = "#6BADFF",
   onClick,
   image,
   text = "",
@@ -54,6 +55,7 @@ export default function Hotspot({
         class="clickable"
         geometry={`primitive: circle; radius: ${radius}`}
         material={`color: ${color};`}
+        look-at="[camera]"
       >
         <a-image wireframe src={iconImage} width="0.3" height = "0.3" position= "0 0 0.001"></a-image> {/* we can place icons inside this image now */}
 

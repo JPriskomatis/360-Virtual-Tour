@@ -50,8 +50,11 @@ export default function SceneSelector({ scenes, currentScene, onSelect }) {
             src={sceneKey}
             alt="scene thumbnail"
             onClick={() => onSelect(sceneKey)}
-            className="w-16 h-16 cursor-pointer border-2 border-white rounded-none 
-                       transition-transform duration-200 hover:scale-105 hover:border-blue-400"
+            className={`w-16 h-16 cursor-pointer border-3 rounded-none 
+                transition-transform duration-200 hover:scale-105 
+                ${sceneKey === String(currentScene) 
+                  ? "border-yellow-400" 
+                  : "border-white hover:border-blue-400"}`}
           />
 
           {index < displayedScenes.length - 1 && (

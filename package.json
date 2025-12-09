@@ -16,6 +16,7 @@
     "aframe-animation-component": "^5.1.2",
     "aframe-event-set-component": "^5.1.0",
     "aframe-extras": "^7.6.0",
+    "aframe-look-at-component": "^1.0.0",
     "aframe-watcher": "^1.4.0",
     "flowbite": "^4.0.1",
     "flowbite-react": "^0.12.10",

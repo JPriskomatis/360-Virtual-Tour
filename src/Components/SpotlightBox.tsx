@@ -29,7 +29,7 @@ export default function SpotlightBox({ hideStartScreen }: { hideStartScreen: () 
   return (
     <div className="z-10 flex justify-center">
       <div
-        className="group relative w-11/12 max-w-md rounded-xl border border-white/10 bg-gray-900 px-6 py-8 shadow-2xl sm:w-auto sm:px-8 sm:py-12"
+        className="group relative w-11/12 max-w-xl rounded-xl border border-white/10 bg-gray-900 px-6 py-8 shadow-2xl sm:w-auto sm:px-8 sm:py-12"
 
         onMouseMove={handleMouseMove}
       >
@@ -55,18 +55,18 @@ export default function SpotlightBox({ hideStartScreen }: { hideStartScreen: () 
         <div className="text-white text-2xl pt-4">
           Πατήστε Έναρξη για να ξεκινήσετε την εξερεύνηση!
         </div>
-        <div className="flex flex-row justify-center items-start gap-10 pt-4">
+        <div className="flex flex-row justify-center items-start gap-14 pt-4">
           <TutorialIcons
           imageSrc={"./images/icons/mouseDrag.png"}
-          iconDescription={"Αριστερό κλίκ πατημένο για Προβολή"}
+          iconDescription={"Αριστερό κλίκ πατημένο για Περιήγηση"}
           />
           <TutorialIcons
             imageSrc={"./images/enter.png"}
-            iconDescription={"Κλίκ για Είσοδο"}
+            iconDescription={"Αριστερό κλίκ για Είσοδο"}
           />
           <TutorialIcons
             imageSrc={"./images/info.png"}
-            iconDescription={"Σύρετε τον δείκτη για να Μάθετε"}
+            iconDescription={"Σύρετε τον δείκτη για Πληροφορίες"}
           />
         </div>
         
