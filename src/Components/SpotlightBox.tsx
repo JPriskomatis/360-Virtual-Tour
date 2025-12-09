@@ -52,7 +52,7 @@ export default function SpotlightBox({ hideStartScreen }: { hideStartScreen: () 
             2)  Icons = What they represent
             3)  Click = Change scenes
         */}
-        <div className="text-white text-2xl pt-4">
+        <div className="text-white text-xl pt-4">
           Πατήστε Έναρξη για να ξεκινήσετε την εξερεύνηση!
         </div>
         <div className="flex flex-row justify-center items-start gap-14 pt-4">

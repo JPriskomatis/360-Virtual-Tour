@@ -61,16 +61,15 @@ export default function App() {
       <div className={`blur-overlay ${isTransitioning ? "active" : ""}`}></div>
 
       {/* StartScreen */}
-      {/*{showStartScreen && (
+      {showStartScreen && (
         
         <StartScreen
           onClose={() => setShowStartScreen(false)}
         />
       )}
-*/}
+
       {/* Title panel overlay */}
-      <div
-        className="absolute top-2 left-2 z-5"
+      <div className="absolute top-2 left-2 z-5"
       >
         <TitlePanelUI
           title={sceneTitle}
@@ -139,6 +138,11 @@ export default function App() {
           backdrop-filter: blur(8px);
           opacity: 1;
         }
+        .zoom-container {
+          transition: transform 0.5s ease;
+          transform: scale(1);
+        }
+          
       `}</style>
     </div>
   );

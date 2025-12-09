@@ -59,6 +59,7 @@ export default function Hotspot({
       >
         <a-image wireframe src={iconImage} width="0.3" height = "0.3" position= "0 0 0.001"></a-image> {/* we can place icons inside this image now */}
 
+
       </a-entity>
 
       {/* Optional main text */}
