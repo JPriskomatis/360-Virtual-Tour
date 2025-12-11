@@ -7,7 +7,7 @@ import { useState } from "react";
 import StartScreen from "./States/StartScreen";
 import TitlePanelUI from "./Components/UI/TitlePanelUI";
 
-const firstImage = "/images/room0.jpg";
+const firstImage = "/360Shots/EntranceHall.jpg";
 
 export default function App() {
   const [currentImage, setCurrentImage] = useState(firstImage);
@@ -61,12 +61,13 @@ export default function App() {
       <div className={`blur-overlay ${isTransitioning ? "active" : ""}`}></div>
 
       {/* StartScreen */}
-      {showStartScreen && (
+      {/* {showStartScreen && (
         
         <StartScreen
           onClose={() => setShowStartScreen(false)}
         />
       )}
+        */}
 
       {/* Title panel overlay */}
       <div className="absolute top-2 left-2 z-5"

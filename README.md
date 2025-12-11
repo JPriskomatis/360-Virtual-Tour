@@ -30,3 +30,4 @@ This will be the tracklist/checklist of Tasks to implement for the virtual tour:
 
 8) UI glass-like panel at top left for title
 
+9) Location for next scene: White circle that on hover draws a line

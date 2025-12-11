@@ -11,7 +11,7 @@ const hotspotsData = {
 
   //Example structure
   /**
-   * "/images/room0.jpg": [ //This is the current image that is showing
+   * "/360Shots/EntranceHall.jpg.jpg": [ //This is the current image that is showing
     {
       position: "1 1 -3",   //Position of the hotspot
       image: "/images/room2.jpg", // Clicking this goes to Vader
@@ -24,35 +24,35 @@ const hotspotsData = {
   ],
    */
   /** First image when we enter the application */
-  "/images/room0.jpg": [
+  "/360Shots/EntranceHall.jpg": [
     {
       sceneTitle: "Αίθουσα Α",
       sceneContent: "Οι εγκαταστάσεις της ΣΠΗΥ βρίσκονται όλες σε ισόγειο χώρο και διαθέτουν κεντρική, αυτόνομη θέρμανση με καλοριφέρ σε όλους τους χώρους-αίθουσες, καθώς και μονάδες κλιματισμού για τη θερινή περίοδο. ",
-      position: "1 -0.5 -3",
-      gotToImage: "/images/room1.jpg",
+      position: "0 -1 -3.5",
+      gotToImage: "/360Shots/EntranceHallDeep.jpg",
       text: "!",
-      iconImage: "./images/enter.png",
+      iconImage: "/images/icons/uparrow.png",
       infoTitle: "Αίθουσα Β",
       //infoText: "Σας καλωσορίζουμε στην ιστοσελίδα της Σχολής Προγραμματιστών Ηλεκτρονικών Υπολογιστών (ΣΠΗΥ). \n Θεωρούμε την επαφή μας με το κοινό ιδιαίτερα σημαντική.\n \n Για το λόγο αυτό με την παρουσία μας στο διαδίκτυο παρέχουμε πληροφορίες για την αποστολή, την οργάνωση, την ιστορία, την εκπαίδευση και εν γένει τις δραστηριότητες της Σχολής."
     },
 
-    {
-      sceneTitle: "Μαθήματα",
-      sceneContent: "Σας καλωσορίζουμε στον Ιστοχώρο της Σχολής Προγραμματιστών Ηλεκτρονικών Υπολογιστών. Θεωρούμε την επαφή μας με το κοινό ιδιαίτερα σημαντική, γι’ αυτό με την παρουσία μας στο διαδίκτυο παρέχουμε πληροφορίες για την αποστολή, την οργάνωση, την ιστορία, την εκπαίδευση, τις δραστηριότητες εν γένει της Σχολής και είμαστε έτοιμοι να ανταποκριθούμε στις παρατηρήσεις σας.",
-      position: "-3 -0.5 -1",
+    // {
+    //   sceneTitle: "Μαθήματα",
+    //   sceneContent: "Σας καλωσορίζουμε στον Ιστοχώρο της Σχολής Προγραμματιστών Ηλεκτρονικών Υπολογιστών. Θεωρούμε την επαφή μας με το κοινό ιδιαίτερα σημαντική, γι’ αυτό με την παρουσία μας στο διαδίκτυο παρέχουμε πληροφορίες για την αποστολή, την οργάνωση, την ιστορία, την εκπαίδευση, τις δραστηριότητες εν γένει της Σχολής και είμαστε έτοιμοι να ανταποκριθούμε στις παρατηρήσεις σας.",
+    //   position: "0 0 3",
       
-      iconImage: "./images/info.png",
-      infoTitle: "Μαθήματα",
-      infoText: "• Αρχές Λειτουργικών Συστημάτων \n • Δίκτυα Υπολογιστών\n • Γλώσσες Προγραμματισμού Και Δομές Δεδομένων \n • Βάσεις Δεδομένων -SQL \n • Ανάλυση Συστημάτων – Τυποποίηση – Ασφάλεια \n • Προγραμματισμός Διαδικτύου"
-    },
+    //   iconImage: "./images/info.png",
+    //   infoTitle: "Μαθήματα",
+    //   infoText: "• Αρχές Λειτουργικών Συστημάτων \n • Δίκτυα Υπολογιστών\n • Γλώσσες Προγραμματισμού Και Δομές Δεδομένων \n • Βάσεις Δεδομένων -SQL \n • Ανάλυση Συστημάτων – Τυποποίηση – Ασφάλεια \n • Προγραμματισμός Διαδικτύου"
+    // },
   ],
 
-  "/images/room1.jpg": [
+  "/360Shots/EntranceHallDeep.jpg": [
     {
       sceneTitle: "Αίθουσα Β",
       sceneContent: "Οι εγκαταστάσεις της ΣΠΗΥ βρίσκονται όλες σε ισόγειο χώρο και διαθέτουν κεντρική, αυτόνομη θέρμανση με καλοριφέρ σε όλους τους χώρους-αίθουσες, καθώς και μονάδες κλιματισμού για τη θερινή περίοδο.",
-      position: "1 1 -3",
-      gotToImage: "/images/room2.jpg",
+      position: "2.5 -1 -1",
+      gotToImage: "/360Shots/NearExit.jpg",
       text: "!",
       iconImage: "./images/enter.png",
       infoTitle: "Αίθουσα Ευκλείδης",
@@ -61,12 +61,12 @@ const hotspotsData = {
   ],
 
 
-  "/images/room2.jpg": [
+  "/360Shots/NearExit.jpg": [
     {
       sceneTitle: "Αίθουσα Ευκλείδης",
       sceneContent: "",
-      position: "1 1 -3",
-      gotToImage: "/images/room3.jpg",
+      position: "2 -1 -1",
+      gotToImage: "/360Shots/RightCorridor.jpg",
       text: "!",
       iconImage: "./images/enter.png",
       infoTitle: "Διάδρομος",
@@ -75,7 +75,7 @@ const hotspotsData = {
   ],
 
   
-  "/images/room3.jpg": [
+  "/360Shots/RightCorridor.jpg": [
     {
       sceneTitle: "Διάδρομος",
       sceneContent: "",
@@ -86,19 +86,19 @@ const hotspotsData = {
     },
     {
       position: "1 1 -3",
-      gotToImage: "/images/room4.jpg",
+      gotToImage: "/360Shots/RoomA.jpg",
       iconImage: "./images/enter.png",
       infoTitle: "Αίθουσα Δημόκριτος-Πυθαγόρας!",
 
     },
   ],
 
-  "/images/room4.jpg": [
+  "/360Shots/RoomA.jpg": [
     {
       sceneTitle: "Αίθουσα Δημόκριτος-Πυθαγόρας",
       sceneContent: "Σας καλωσορίζουμε στον Ιστοχώρο της Σχολής Προγραμματιστών Ηλεκτρονικών Υπολογιστών. Θεωρούμε την επαφή μας με το κοινό ιδιαίτερα σημαντική, γι’ αυτό με την παρουσία μας στο διαδίκτυο παρέχουμε πληροφορίες για την αποστολή, την οργάνωση, την ιστορία, την εκπαίδευση, τις δραστηριότητες εν γένει της Σχολής και είμαστε έτοιμοι να ανταποκριθούμε στις παρατηρήσεις σας.",
       position: "1 1 -3",
-      gotToImage: "/images/room0.jpg",
+      gotToImage: "/360Shots/EntranceHall.jpg",
       text: "!",
       iconImage: "./images/enter.png",
       infoTitle: "Αίθουσα Α",
