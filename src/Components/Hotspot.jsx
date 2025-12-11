@@ -1,11 +1,13 @@
 import { useRef, useState, useEffect } from "react";
 import InfoPanelUI from "./UI/InfoPanelUI";
-import "aframe-look-at-component"; 
+import "aframe-look-at-component";
+import NavigationIcon from "./UI/navigationIcon";
 
 export default function Hotspot({
   position,
+  rotation,
   radius = 0.1,
-  color = "#6BADFF",
+  color = "white",
   onClick,
   image,
   text = "",
@@ -25,13 +27,13 @@ export default function Hotspot({
     };
 
     const handleMouseEnter = () => {
-      hotspot.setAttribute("material", "color: blue");
+      hotspot.setAttribute("material", "opacity: 1");
       if (infoTitle) setShowInfo(true);
       
     };
 
     const handleMouseLeave = () => {
-      hotspot.setAttribute("material", `color: ${color}`);
+      hotspot.setAttribute("material", "opacity: 0");
       setShowInfo(false);
     };
 
@@ -48,17 +50,26 @@ export default function Hotspot({
 
   return (
     
-    <a-entity position={position}>
+    <a-entity position={position} rotation={rotation}>
       {/* Hotspot circle */}
-      <a-entity
+
+
+
+       <a-entity
+        
         ref={hotspotRef}
         class="clickable"
         geometry={`primitive: circle; radius: ${radius}`}
-        material={`color: ${color};`}
-        look-at="[camera]"
-      >
-        <a-image wireframe src={iconImage} width="0.3" height = "0.3" position= "0 0 0.001"></a-image> {/* we can place icons inside this image now */}
+        material={`color: ${color}; opacity: 0`}
 
+      >
+        {/*<a-image  wireframe src={iconImage} width="0.3" height = "0.3" position= "0 0 0.001"></a-image> {/* we can place icons inside this image now */} 
+
+          <a-entity
+            geometry="primitive: ring; radiusInner: 0.25; radiusOuter: 0.2;" 
+            material="color: white; side: double; opacity: 0.75"
+            position="0 0 0">
+          </a-entity>
 
       </a-entity>
 
