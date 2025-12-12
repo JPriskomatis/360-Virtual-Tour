@@ -57,6 +57,8 @@ export default function App() {
 
   return (
     <div className="app" style={{ width: "100vw", height: "100vh" }}>
+
+
       {/* Blur overlay */}
       <div className={`blur-overlay ${isTransitioning ? "active" : ""}`}></div>
 
