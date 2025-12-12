@@ -14,7 +14,7 @@ interface InfoPanelUIProps{
 }
 export default function InfoPanelUI({title, information} : InfoPanelUIProps){
     return (
-    <div className="z-10 absolute bottom-50 left-1/2 -translate-x-1/2 p-8 flex items-center justify-center">
+    <div className="pointer-events-none z-10 absolute bottom-50 left-1/2 -translate-x-1/2 p-8 flex items-center justify-center">
       <div
         style={{
           /* Animated gradient border */

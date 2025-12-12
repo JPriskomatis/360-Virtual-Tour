@@ -141,10 +141,7 @@ export default function App() {
         .blur-overlay.active {
           backdrop-filter: blur(8px);
           opacity: 1;
-        }
-        .zoom-container {
-          transition: transform 0.5s ease;
-          transform: scale(1);
+
         }
           
       `}</style>
