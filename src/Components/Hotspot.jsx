@@ -52,12 +52,12 @@ export default function Hotspot({
     
     <a-entity position={position} rotation={rotation}>
       {/* Hotspot circle */}
-
+      
 
 
        <a-entity
-        
         ref={hotspotRef}
+        
         class="clickable"
         geometry={`primitive: circle; radius: ${radius}`}
         material={`color: ${color}; opacity: 0`}
@@ -67,7 +67,7 @@ export default function Hotspot({
 
           <a-entity
             geometry="primitive: ring; radiusInner: 0.25; radiusOuter: 0.2;" 
-            material="color: white; side: double; opacity: 0.75"
+            material="color: white; side: double; opacity: 0.8"
             position="0 0 0">
           </a-entity>
 

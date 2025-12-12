@@ -72,6 +72,20 @@ const hotspotsData = {
     },
   ],
 
+  "/360Shots/RoomA.jpg": [
+    {
+      sceneTitle: "Αίθουσα Α",
+      sceneContent: "",
+      position: "2 -1.3 -1.5",
+      rotation: "-90 0 0",
+      gotToImage: "/360Shots/EntranceHallDeep.jpg",
+      text: "!",
+      iconImage: "./images/RoomA.jpg",
+      infoTitle: "Έξοδος",
+      //infoText: "Σας καλωσορίζουμε στην ιστοσελίδα της Σχολής Προγραμματιστών Ηλεκτρονικών Υπολογιστών (ΣΠΗΥ). \n Θεωρούμε την επαφή μας με το κοινό ιδιαίτερα σημαντική.\n \n Για το λόγο αυτό με την παρουσία μας στο διαδίκτυο παρέχουμε πληροφορίες για την αποστολή, την οργάνωση, την ιστορία, την εκπαίδευση και εν γένει τις δραστηριότητες της Σχολής."
+    },
+  ],
+
 
 
   "/360Shots/NearExit.jpg": [
@@ -155,7 +169,8 @@ const hotspotsData = {
     {
       sceneTitle: "Αίθουσα Ευκλείδης",
       sceneContent: "",
-      position: "2 -1 -1",
+      position: "4 0 5.25",
+      rotation: "180 90 0",
       gotToImage: "/360Shots/DownCorridor.jpg",
       text: "!",
       iconImage: "./images/enter.png",
@@ -168,11 +183,12 @@ const hotspotsData = {
     {
       sceneTitle: "Αίθουσα Δημόκριτος-Πυθαγόρας",
       sceneContent: "",
-      position: "2 -1 -1",
+      position: "2 -1 -0.3",
+      rotation: "-90 90 0",
       gotToImage: "/360Shots/DownCorridor.jpg",
       text: "!",
       iconImage: "./images/enter.png",
-      infoTitle: "Διάδρομος",
+      infoTitle: "Κάτω Αίθουσες",
       //infoText: "Σας καλωσορίζουμε στην ιστοσελίδα της Σχολής Προγραμματιστών Ηλεκτρονικών Υπολογιστών (ΣΠΗΥ). \n Θεωρούμε την επαφή μας με το κοινό ιδιαίτερα σημαντική.\n \n Για το λόγο αυτό με την παρουσία μας στο διαδίκτυο παρέχουμε πληροφορίες για την αποστολή, την οργάνωση, την ιστορία, την εκπαίδευση και εν γένει τις δραστηριότητες της Σχολής."
     },
   ],

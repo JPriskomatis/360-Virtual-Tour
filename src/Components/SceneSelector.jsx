@@ -71,14 +71,13 @@ export default function SceneSelector({ scenes, currentScene, onSelect }) {
               />
 
               {/* Connecting line */}
-              {/* Connecting line */}
               {index < displayedScenes.length - 1 && (
                 <div
                   style={{
                     position: "absolute",
                     top: "50%",
                     left: "100%",
-                    width: "200px",
+                    width: "150px",
                     height: "2px",
                     backgroundColor: isVisited ? "blue" : "white",
                     transform: "translateY(-50%)",
