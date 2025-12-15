@@ -77,7 +77,7 @@ export default function SceneSelector({ scenes, currentScene, onSelect }) {
                     position: "absolute",
                     top: "50%",
                     left: "100%",
-                    width: "150px",
+                    width: "180px",
                     height: "2px",
                     backgroundColor: isVisited ? "blue" : "white",
                     transform: "translateY(-50%)",

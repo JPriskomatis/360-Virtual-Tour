@@ -146,7 +146,7 @@ const hotspotsData = {
       //Αριστερά Αίθουσα
       position: "4 -1 -1",
       rotation: "0 -70 0",
-      gotToImage: "/360Shots/LefttRoom.jpg",
+      gotToImage: "/360Shots/LeftRoom.jpg",
       text: "!",
       iconImage: "./images/enter.png",
       infoTitle: "Αίθουσα Ευκλείδης",

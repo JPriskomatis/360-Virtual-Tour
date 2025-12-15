@@ -3,7 +3,7 @@ import "./App.css";
 import Hotspot from "./Components/Hotspot";
 import SceneSelector from "./Components/SceneSelector";
 import hotspotsData from "./Data/ScenesList";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import StartScreen from "./States/StartScreen";
 import TitlePanelUI from "./Components/UI/TitlePanelUI";
 
@@ -22,23 +22,25 @@ export default function App() {
     hotspotsData[firstImage]?.[0]?.sceneContent || ""
   );
 
-  // Control StartScreen visibility
   const [showStartScreen, setShowStartScreen] = useState(true);
-
   const [isTransitioning, setIsTransitioning] = useState(false);
+
+  // Map image paths to A-Frame asset IDs
+  const imageIdMap = Object.keys(hotspotsData).reduce((acc, src, index) => {
+    // Generate an ID like "img0", "img1", etc.
+    acc[src] = `img${index}`;
+    return acc;
+  }, {});
 
   const changeScene = (image) => {
     setIsTransitioning(true);
 
     setTimeout(() => {
       const newHotspots = hotspotsData[image] || [];
-
       setCurrentImage(image);
-      setCurrentHotspots(newHotspots);
-
       setSceneTitle(newHotspots[0]?.sceneTitle || "");
       setSceneContent(newHotspots[0]?.sceneContent || "");
-
+      setCurrentHotspots(newHotspots);
       setIsTransitioning(false);
     }, 500);
   };
@@ -49,31 +51,17 @@ export default function App() {
     }
   };
 
-  // Function to show StartScreen again
   const displayStartScreen = () => {
     setShowStartScreen(true);
-    console.log("sdf");
   };
 
   return (
     <div className="app" style={{ width: "100vw", height: "100vh" }}>
-
-
       {/* Blur overlay */}
       <div className={`blur-overlay ${isTransitioning ? "active" : ""}`}></div>
 
-      {/* StartScreen */}
-      {/* {showStartScreen && (
-        
-        <StartScreen
-          onClose={() => setShowStartScreen(false)}
-        />
-      )}
-        */}
-
       {/* Title panel overlay */}
-      <div className="absolute top-2 left-2 z-5"
-      >
+      <div className="absolute top-2 left-2 z-5">
         <TitlePanelUI
           title={sceneTitle}
           sceneContent={sceneContent}
@@ -81,7 +69,7 @@ export default function App() {
         />
       </div>
 
-      {/* Info button to reopen StartScreen */}
+      {/* Info button */}
       <div className="absolute top-2 right-4 z-50">
         <img
           className="w-[50px] cursor-pointer hover:opacity-55"
@@ -99,8 +87,21 @@ export default function App() {
         vr-mode-ui="enabled: true"
         cursor="rayOrigin: mouse"
       >
-        <a-sky id="image-360" src={currentImage} rotation="0 -90 0"></a-sky>
+        {/* Preload all 360 images using a-assets */}
+        <a-assets>
+          {Object.keys(hotspotsData).map((src) => (
+            <img key={src} id={imageIdMap[src]} src={src} />
+          ))}
+        </a-assets>
 
+        {/* Use the preloaded image ID for the sky */}
+        <a-sky
+          id="image-360"
+          src={`#${imageIdMap[currentImage]}`}
+          rotation="0 -90 0"
+        ></a-sky>
+
+        {/* Hotspots */}
         {currentHotspots.map((h, index) => (
           <Hotspot
             key={index}
@@ -121,7 +122,11 @@ export default function App() {
       </a-scene>
 
       {/* Scene selector overlay */}
-      <SceneSelector scenes={hotspotsData} currentScene={currentImage} onSelect={changeScene} />
+      <SceneSelector
+        scenes={hotspotsData}
+        currentScene={currentImage}
+        onSelect={changeScene}
+      />
 
       {/* Styles for blur overlay */}
       <style>{`
@@ -132,18 +137,15 @@ export default function App() {
           width: 100%;
           height: 100%;
           backdrop-filter: blur(0px);
-          transition: backdrop-filter 0.5s ease, opacity 0.5s ease;
+          transition: backdrop-filter 1s ease, opacity 1s ease;
           pointer-events: none;
           opacity: 0;
           z-index: 20;
         }
-
         .blur-overlay.active {
           backdrop-filter: blur(8px);
           opacity: 1;
-
         }
-          
       `}</style>
     </div>
   );
