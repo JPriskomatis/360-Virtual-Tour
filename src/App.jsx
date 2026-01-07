@@ -10,6 +10,8 @@ import TitlePanelUI from "./Components/UI/TitlePanelUI";
 const firstImage = "/360Shots/EntranceHall.jpg";
 
 export default function App() {
+
+
   const [currentImage, setCurrentImage] = useState(firstImage);
   const [currentHotspots, setCurrentHotspots] = useState(
     hotspotsData[firstImage] || []
@@ -59,6 +61,10 @@ export default function App() {
     <div className="app" style={{ width: "100vw", height: "100vh" }}>
       {/* Blur overlay */}
       <div className={`blur-overlay ${isTransitioning ? "active" : ""}`}></div>
+
+      {showStartScreen && (
+        <StartScreen
+      onClose={() => setShowStartScreen(false)}/>) }
 
       {/* Title panel overlay */}
       <div className="absolute top-2 left-2 z-5">
