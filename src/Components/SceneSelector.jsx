@@ -46,7 +46,7 @@ export default function SceneSelector({ scenes, currentScene, onSelect }) {
       }}
     >
       {displayedScenes.map((sceneKey, index) => {
-        const title = scenes[sceneKey][0].sceneTitle;
+        const title = scenes[sceneKey][0].minimapTitle || scenes[sceneKey][0].sceneTitle;
 
         const sceneIndex = sceneKeys.indexOf(sceneKey);
         const isCurrent = sceneIndex === currentIndex;

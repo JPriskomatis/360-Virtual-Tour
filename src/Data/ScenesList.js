@@ -26,7 +26,8 @@ const hotspotsData = {
   /** First image when we enter the application */
   "/360Shots/EntranceHall.jpg": [
     {
-      sceneTitle: "Κύριος Διάδρομος",
+      sceneTitle: "Σχολή Προγραμματιστών Ηλεκτρονικών Υπολογιστών",
+      minimapTitle: "ΣΠΗΥ",
       sceneContent: "",
       position: "0 -1 -3.5",
       rotation: "50 0 0",
