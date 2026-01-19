@@ -10,7 +10,7 @@ export default function TitlePanelUI({title, sceneContent, isTransitioning }){
                     brightness={1.1}
                     saturation={1.2}
                 >
-                    <h2 className='text-white font-bold text-4xl p-4'>{title}</h2>
+                    <h2 className='text-white font-bold text-4xl p-4 '>{title}</h2>
                     <p className='text-white p-4 font-semibold w-full text-start'>{sceneContent}</p>
             </LiquidGlass>
         </div>

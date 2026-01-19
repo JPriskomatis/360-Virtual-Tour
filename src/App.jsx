@@ -18,7 +18,7 @@ export default function App() {
   );
 
   const [sceneTitle, setSceneTitle] = useState(
-    hotspotsData[firstImage]?.[0]?.sceneTitle || ""
+    hotspotsData[firstImage]?.[0]?.infoTitleName || ""
   );
   const [sceneContent, setSceneContent] = useState(
     hotspotsData[firstImage]?.[0]?.sceneContent || ""
